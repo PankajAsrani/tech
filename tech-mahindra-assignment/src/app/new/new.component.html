@@ -1,0 +1,18 @@
+<mat-card>
+    <form #fg="ngForm" (ngSubmit)="onSubmit(fg.value)">
+        <mat-form-field>
+            <input style="width: 70% !important;" matInput placeholder="Image Name" ngModel name="name" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <textarea matInput placeholder="Image Details" ngModel name="details" required>
+                    </textarea>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input style="width: 90% !important;" matInput placeholder="Image URL" ngModel name="url" required>
+        </mat-form-field>
+        <button mat-flat-button [disabled]="fg.invalid" color="primary">Add Image</button>
+        <button mat-flat-button (click)="back()">Back</button>
+    </form>
+</mat-card>

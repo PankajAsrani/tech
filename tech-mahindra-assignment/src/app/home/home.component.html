@@ -1,0 +1,22 @@
+<div style="display: flex;justify-content: flex-end;">
+<button mat-raised-button 
+color="primary" 
+style="margin-top: 10px;margin-right: 10px;"
+(click)="navigateToNew()">Add New Image</button>
+</div>
+
+<div fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="10px" style="margin-top: 10px;">
+<mat-card fxFlex="31" *ngFor="let image of imageList" (click)="showInfo(image.id)">
+    <div  style="display: flex;flex-direction: column;">
+        <img [src]="image.url" alt="image" class="image">
+        <div >
+            <div class="content">
+                {{image.name}} 
+            </div>
+        </div>
+        <div class="description">
+            {{image.details}}
+        </div>
+    </div>
+</mat-card>
+</div>
